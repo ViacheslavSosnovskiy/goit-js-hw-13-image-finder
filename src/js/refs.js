@@ -1,7 +1,8 @@
 const refs = {
-  form: document.getElementById('search-form'),
-  list: document.querySelector('.gallery'),
+  searchForm: document.getElementById('search-form'),
+  galerryList: document.querySelector('.gallery'),
   searchBtn: document.querySelector('.searchBtn'),
+  searchMore: document.querySelector('.searchMore'),
 };
 
 export default refs;
