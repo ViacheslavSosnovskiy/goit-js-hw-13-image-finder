@@ -1,4 +1,4 @@
-const KEY = '22984759-30de173458e69cd83eb69d4b0';
+const MY_KEY = '22984759-30de173458e69cd83eb69d4b0';
 const BASE_URL = 'https://pixabay.com/api/?image_type=photo&orientation=horizontal';
 
 export default class NewApiService {
@@ -8,12 +8,13 @@ export default class NewApiService {
   }
 
   fetchPictures() {
-    const optionst = {
+    const options = {
       headers: {
-        autorizations: KEY,
+        Authorization: MY_KEY,
       },
     };
-    const url = `${BASE_URL}&q=${searchQuery}&page=${this.page}&per_page=12&key=${MY_KEY}`;
+
+    const url = `${BASE_URL}&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${MY_KEY}`;
 
     fetch(url, options)
       .then(response => response.json())
@@ -24,6 +25,10 @@ export default class NewApiService {
 
   incrementPage() {
     this.page += 1;
+  }
+
+  resetPage() {
+    this.page = 1;
   }
 
   get query() {
