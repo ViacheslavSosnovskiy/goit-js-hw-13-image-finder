@@ -3,6 +3,7 @@ const BASE_URL = 'https://pixabay.com/api/?image_type=photo&orientation=horizont
 
 export default class NewApiService {
   constructor() {
+    this.searchQuery = '';
     this.page = 1;
   }
 
@@ -16,6 +17,20 @@ export default class NewApiService {
 
     fetch(url, options)
       .then(response => response.json())
-      .then(console.log);
+      .then(data => {
+        this.incrementPage();
+      });
+  }
+
+  incrementPage() {
+    this.page += 1;
+  }
+
+  get query() {
+    return this.searchQuery;
+  }
+
+  set query(newQuery) {
+    this.searchQuery = newQuery;
   }
 }
