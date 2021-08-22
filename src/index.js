@@ -2,6 +2,9 @@ import cards from './templates/cards.hbs';
 
 import NewApiService from './js/apiService.js';
 import refs from './js/refs.js';
+// ==== pnotify =====
+import { alert, defaultModules } from '@pnotify/core';
+import '@pnotify/core/dist/BrightTheme.css';
 
 const newsApiService = new NewApiService();
 
