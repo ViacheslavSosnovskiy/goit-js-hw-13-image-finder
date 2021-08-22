@@ -15,7 +15,7 @@ export default class NewApiService {
       .then(data => {
         this.incrementPage();
 
-        return data.articles;
+        return data;
       });
   }
 

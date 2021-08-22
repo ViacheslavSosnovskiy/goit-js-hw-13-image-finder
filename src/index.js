@@ -35,13 +35,13 @@ function onSearch(e) {
 }
 
 function onLoadMore() {
-  newsApiService.fetchPictures().then(articles => {
-    appendArticlesMarkup(articles);
+  newsApiService.fetchPictures().then(data => {
+    appendArticlesMarkup(data);
   });
 }
 
-function appendArticlesMarkup(articles) {
-  refs.galerryList.insertAdjacentHTML('beforeend', cards(articles));
+function appendArticlesMarkup(data) {
+  refs.galerryList.insertAdjacentHTML('beforeend', cards(data));
 }
 
 function clearArticlesContainer() {
