@@ -1,4 +1,4 @@
-import './templates/cards.hbs';
+import cards from './templates/cards.hbs';
 
 import NewApiService from './js/apiService.js';
 import refs from './js/refs.js';
@@ -13,9 +13,17 @@ function onSearch(e) {
 
   newsApiService.query = e.currentTarget.elements.query.value;
   newsApiService.resetPage();
-  newsApiService.fetchPictures();
+  newsApiService.fetchPictures().then(appendArticlesMarkup);
 }
 
 function onLoadMore() {
-  newsApiService.fetchPictures();
+  newsApiService.fetchPictures().then(appendArticlesMarkup);
 }
+
+function appendArticlesMarkup(articles) {
+  refs.galerryList.insertAdjacentHTML('beforeend', cards(articles));
+}
+
+// function clearArticlesContainer() {
+//   // refs.
+// }

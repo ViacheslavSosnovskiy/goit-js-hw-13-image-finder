@@ -8,18 +8,14 @@ export default class NewApiService {
   }
 
   fetchPictures() {
-    const options = {
-      headers: {
-        Authorization: MY_KEY,
-      },
-    };
-
     const url = `${BASE_URL}&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${MY_KEY}`;
 
-    fetch(url, options)
+    return fetch(url)
       .then(response => response.json())
       .then(data => {
         this.incrementPage();
+
+        return data.articles;
       });
   }
 
