@@ -1,4 +1,5 @@
 import cards from './templates/cards.hbs';
+import './css/styles.css';
 
 import NewApiService from './js/apiService.js';
 import refs from './js/refs.js';
