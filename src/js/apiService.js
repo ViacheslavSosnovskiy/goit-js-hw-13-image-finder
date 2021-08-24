@@ -5,10 +5,11 @@ export default class NewApiService {
   constructor() {
     this.searchQuery = '';
     this.page = 1;
+    this.perPage = 6;
   }
 
   fetchPictures() {
-    const url = `${BASE_URL}&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${MY_KEY}`;
+    const url = `${BASE_URL}&q=${this.searchQuery}&page=${this.page}&per_page=${this.perPage}&key=${MY_KEY}`;
 
     return fetch(url)
       .then(response => response.json())

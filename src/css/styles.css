@@ -1,14 +1,34 @@
+/* .container {
+} */
+
 .gallery {
   display: flex;
+  margin-top: 30px;
 }
 
 .photo-card {
-  border-radius: 10px;
+  border-radius: 15px;
   border: 5px solid #000;
-  height: 300px;
+  margin: 20px;
+  height: 250px;
+  /* width: 200px; */
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+}
+
+.stats-item {
+  margin: 10px;
+}
+
+.photo-card:not(:lastchild) {
+  margin-right: 30px;
 }
 
 .photo-card img {
   display: block;
-  height: 200px;
+  height: 180px;
+  width: 220px;
 }
