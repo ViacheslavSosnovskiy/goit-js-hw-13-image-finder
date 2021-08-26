@@ -1,5 +1,10 @@
-/* .container {
-} */
+.container {
+  padding-top: 30px;
+}
+
+.search-form {
+  margin-bottom: 30px;
+}
 
 .gallery {
   display: flex;
@@ -11,7 +16,6 @@
   border: 5px solid #000;
   margin: 20px;
   height: 250px;
-  /* width: 200px; */
 }
 
 .stats {
@@ -31,4 +35,23 @@
   display: block;
   height: 180px;
   width: 220px;
+}
+
+button {
+  border: 2px solid #000;
+  background-color: #fff;
+  width: 150px;
+  height: 40px;
+}
+
+button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+input {
+  margin-right: 30px;
+  border: 2px solid #000;
+  width: 200px;
+  height: 34px;
 }
