@@ -36,8 +36,8 @@ function onSearch(e) {
 }
 
 function onLoadMore() {
-  newsApiService.fetchPictures().then(data => {
-    appendArticlesMarkup(data);
+  newsApiService.fetchPictures().then(hits => {
+    appendArticlesMarkup(hits);
   });
 }
 

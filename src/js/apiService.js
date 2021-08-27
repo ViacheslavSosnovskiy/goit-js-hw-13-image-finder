@@ -13,10 +13,10 @@ export default class NewApiService {
 
     return fetch(url)
       .then(response => response.json())
-      .then(data => {
+      .then(({hits}) => {
         this.incrementPage();
 
-        return data;
+        return hits;
       });
   }
 
