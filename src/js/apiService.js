@@ -5,7 +5,7 @@ export default class NewApiService {
   constructor() {
     this.searchQuery = '';
     this.page = 1;
-    this.perPage = 6;
+    this.perPage = 12;
   }
 
   fetchPictures() {
@@ -13,7 +13,7 @@ export default class NewApiService {
 
     return fetch(url)
       .then(response => response.json())
-      .then(({hits}) => {
+      .then(({ hits }) => {
         this.incrementPage();
 
         return hits;

@@ -19,7 +19,7 @@ function onSearch(e) {
   clearArticlesContainer();
   newsApiService.query = e.currentTarget.elements.query.value;
 
-  if (newsApiService.query === '') {
+  if (newsApiService.query !== '') {
     success({
       title: 'Success!',
       text: 'That thing that you were trying to do worked.',
@@ -41,8 +41,8 @@ function onLoadMore() {
   });
 }
 
-function appendArticlesMarkup(data) {
-  refs.galerryList.insertAdjacentHTML('beforeend', cards(data));
+function appendArticlesMarkup(hits) {
+  refs.galerryList.insertAdjacentHTML('beforeend', cards(hits));
 }
 
 function clearArticlesContainer() {
