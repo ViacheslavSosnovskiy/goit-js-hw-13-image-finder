@@ -8,6 +8,8 @@
 
 .gallery {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 30px;
 }
 
@@ -16,6 +18,11 @@
   border: 5px solid #000;
   margin: 20px;
   height: 250px;
+  width: 260px;
+}
+
+.photo-card:hover {
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 3px 7px 9px;
 }
 
 .stats {

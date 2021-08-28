@@ -38,6 +38,15 @@ function onSearch(e) {
 function onLoadMore() {
   newsApiService.fetchPictures().then(hits => {
     appendArticlesMarkup(hits);
+    scroll();
+  });
+}
+
+function scroll() {
+  const element = document.getElementById('scroll');
+  element.scrollIntoView({
+    behavior: 'smooth',
+    block: 'end',
   });
 }
 
