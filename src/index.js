@@ -4,7 +4,7 @@ import './css/styles.css';
 import NewApiService from './js/apiService.js';
 import refs from './js/refs.js';
 // ==== pnotify =====
-import { success, error } from '@pnotify/core';
+// import { success, error } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
 
@@ -19,17 +19,17 @@ function onSearch(e) {
   clearArticlesContainer();
   newsApiService.query = e.currentTarget.elements.query.value;
 
-  if (newsApiService.query !== '') {
-    success({
-      title: 'Success!',
-      text: 'That thing that you were trying to do worked.',
-    });
-  } else {
-    error({
-      title: 'Oh No!',
-      text: 'Something terrible happened.',
-    });
-  }
+  // if (newsApiService.query !== 0 && newsApiService.query !== '') {
+  //   success({
+  //     title: 'Success!',
+  //     text: 'That thing that you were trying to do worked.',
+  //   });
+  // } else {
+  //   error({
+  //     title: 'Oh No!',
+  //     text: 'Something terrible happened.',
+  //   });
+  // }
 
   newsApiService.resetPage();
   newsApiService.fetchPictures().then(appendArticlesMarkup);
