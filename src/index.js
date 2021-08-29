@@ -4,7 +4,7 @@ import './css/styles.css';
 import NewApiService from './js/apiService.js';
 import refs from './js/refs.js';
 // ==== pnotify =====
-import { success, error } from '@pnotify/core';
+import { error } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
 
@@ -20,15 +20,11 @@ function onSearch(e) {
   newsApiService.query = e.currentTarget.elements.query.value;
 
   if (newsApiService.query === '') {
-    error({
+    return error({
       title: 'Oh No!',
       text: 'Something terrible happened.',
     });
   }
-  success({
-    title: 'Success!',
-    text: 'That thing that you were trying to do worked.',
-  });
 
   newsApiService.resetPage();
   newsApiService.fetchPictures().then(appendArticlesMarkup);
