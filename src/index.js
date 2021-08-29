@@ -26,6 +26,14 @@ function onSearch(e) {
     });
   }
 
+  newsApiService.fetchPictures().then(hits => {
+    if (hits.length < 1) {
+      return error({
+        text: 'Пожалуйста, введите что-то корректное',
+      });
+    }
+  });
+
   newsApiService.resetPage();
   newsApiService.fetchPictures().then(appendArticlesMarkup);
 }
